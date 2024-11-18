@@ -6977,7 +6977,7 @@ static float *stbi__hdr_load(stbi__context *s, int *x, int *y, int *comp, int re
    for(;;) {
       token = stbi__hdr_gettoken(s,buffer);
       if (token[0] == 0) break;
-      if (strcmp(token, "FORMAT=32-bit_rle_rgbe") == 0) valid = 1;
+      if (strcmp(token, "FORMAT=") == 0) valid = 1;
    }
 
    if (!valid)    return stbi__errpf("unsupported format", "Unsupported HDR format");
